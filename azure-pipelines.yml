@@ -6,14 +6,12 @@ trigger:
 - main
 
 variables:
-  buildConfiguration: 'Release'
   location: 'westeurope'
   acrHostName: 'vastadocker001acr.azurecr.io'
   acrName: 'vastadocker001acr'
   rgName: 'knoxdocker001-rg'
   containerName: 'knoxdocker001'
-  appName: 'knoxdocker001'
-  poolName: 'DemoAgentPool'
+  appName: 'vastadocker001'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   appSvcPlanName: 'knoxdocksvcplan'
