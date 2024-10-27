@@ -74,7 +74,7 @@ stages:
         resourceGroupName: '$(rgName)'
         location: '$(location)'
         templateLocation: 'URL of the file'
-        csmFileLink: '$(Pipeline.Workspace)/**/app-svc-temp.json'
+        csmFileLink: '$(System.DefaultWorkingDirectory)/**/app-svc-temp.json'
         overrideParameters: '-appName $(appName) -appSvcPlanName $(appSvcPlanName) -appInsightsLocation "$(location)" -appSku "Free" -acrName $(acrName) -acrLocation "$(location)" -acrSku standard -containerName $(containerName):$(Build.BuildId)'
         deploymentMode: 'Incremental'
 
