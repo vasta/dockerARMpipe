@@ -11,7 +11,7 @@ variables:
   acrName: 'vastadocker001acr'
   rgName: 'knoxdocker001-rg'
   containerName: 'knoxdocker001'
-  appName: 'vastadocker001'
+  appName: 'vastadocker002'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   appSvcPlanName: 'knoxdocksvcplan'
