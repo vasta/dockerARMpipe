@@ -21,14 +21,16 @@ variables:
 resources:
 - repo: self
 
+pool:
+  name: '$(poolName)'
+
 stages:
 - stage: Build
   displayName: Build and push stage
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      name: '$(poolName)'
+
     steps:
     - task: AzureResourceGroupDeployment@2
       displayName: 'Azure Container Registry Deployment'
