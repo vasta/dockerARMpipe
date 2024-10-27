@@ -8,8 +8,8 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   location: 'westeurope'
-  acrHostName: 'knoxdocker001acr.azurecr.io'
-  acrName: 'knoxdocker001acr'
+  acrHostName: 'vastadocker001acr.azurecr.io'
+  acrName: 'vastadocker001acr'
   rgName: 'knoxdocker001-rg'
   containerName: 'knoxdocker001'
   appName: 'knoxdocker001'
