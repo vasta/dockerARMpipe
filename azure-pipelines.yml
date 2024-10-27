@@ -78,10 +78,6 @@ stages:
     - task: AzureRmWebAppDeployment@4
       displayName: 'App Svc Deploy'
       inputs:
-        azureSubscription: 'azureSrvcConn'
-        appType: 'webAppContainer'
-    - task: AzureRmWebAppDeployment@4
-      inputs:
         ConnectionType: 'AzureRM'
         azureSubscription: 'azureSrvcConn'
         appType: 'webAppContainer'
