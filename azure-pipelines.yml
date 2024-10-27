@@ -74,7 +74,7 @@ stages:
         resourceGroupName: '$(rgName)'
         location: '$(location)'
         csmFile: '$(Pipeline.Workspace)/**/app-svc-temp.json'
-        overrideParameters: '-appName $(appName) -appSvcPlanName $(appSvcPlanName) -appInsightsLocation "$(location)" -appSku "Free" -acrName $(acrName) -acrLocation "$(location)" -acrSku standard -containerName $(containerName):$(Build.BuildId)'
+        overrideParameters: '-appName $(appName) -appSvcPlanName $(appSvcPlanName) -appInsightsLocation "$(location)" -appSku "F1 Free" -acrName $(acrName) -acrLocation "$(location)" -acrSku standard -containerName $(containerName):$(Build.BuildId)'
         deploymentMode: 'Incremental'
 
     - task: AzureRmWebAppDeployment@4
