@@ -96,8 +96,8 @@
         {
             "type": "Microsoft.Web/serverfarms",
             "sku": {
-                "Tier": "[first(skip(split(parameters('appSku'), ' '), 1))]",
-                "Name": "[first(split(parameters('appSku'), ' '))]"
+                "Tier": "Free",
+                "Name": "Free"
             },
             "kind": "linux",
             "name": "[parameters('appSvcPlanName')]",
