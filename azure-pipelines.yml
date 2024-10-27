@@ -68,23 +68,23 @@ stages:
     steps:
 
     - task: AzureResourceGroupDeployment@2
-      displayName: 'Azure App Service Deployment'
       inputs:
         azureSubscription: 'azureSrvcConn'
+        action: 'Create Or Update Resource Group'
         resourceGroupName: '$(rgName)'
         location: '$(location)'
-        csmFile: '$(Pipeline.Workspace)/**/app-svc-temp.json'
+        templateLocation: 'URL of the file'
+        csmFileLink: '$(Pipeline.Workspace)/**/app-svc-temp.json'
         overrideParameters: '-appName $(appName) -appSvcPlanName $(appSvcPlanName) -appInsightsLocation "$(location)" -appSku "Free" -acrName $(acrName) -acrLocation "$(location)" -acrSku standard -containerName $(containerName):$(Build.BuildId)'
-    - task: AzureRmWebAppDeployment@3
+        deploymentMode: 'Incremental'
+
+    - task: AzureRmWebAppDeployment@4
       displayName: 'App Svc Deploy'
       inputs:
+        ConnectionType: 'AzureRM'
         azureSubscription: 'azureSrvcConn'
-        appType: 'applinux'
+        appType: 'webAppLinux'
         WebAppName: '$(appName)'
         DockerNamespace: '$(acrHostName)'
         DockerRepository: '$(containerName)'
-        DockerImageTag: '$(Build.BuildId)'
-        WebAppUri: webAppUrl
-        TakeAppOfflineFlag: true
-        UseWebDeploy: true
-        RenameFilesFlag: true
+        DockerImageTag: '$(tag)'
