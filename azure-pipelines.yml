@@ -22,7 +22,7 @@ resources:
 - repo: self
 
 pool:
-  name: '$(poolName)'
+  name: 'DemoAgentPool'
 
 stages:
 - stage: Build
