@@ -80,10 +80,13 @@ stages:
     - task: AzureRmWebAppDeployment@4
       displayName: 'App Svc Deploy'
       inputs:
-        ConnectionType: 'AzureRM'
         azureSubscription: 'azureSrvcConn'
         appType: 'webAppLinux'
         WebAppName: '$(appName)'
         DockerNamespace: '$(acrHostName)'
         DockerRepository: '$(containerName)'
         DockerImageTag: '$(tag)'
+        WebAppUri: webAppUrl
+        TakeAppOfflineFlag: true
+        UseWebDeploy: true
+        RenameFilesFlag: true
